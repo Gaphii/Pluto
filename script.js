@@ -138,6 +138,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Destek formu işleme
+    const supportForm = document.getElementById('supportForm');
+    if (supportForm) {
+        supportForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitSupportRequest();
+        });
+    }
+    
+    // İndirme butonları
+    const downloadButtons = document.querySelectorAll('.download-btn');
+    downloadButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            downloadFile(this);
+        });
+    });
+    
     // Kullanıcı giriş durumunu kontrol et
     checkLoginStatus();
 });
@@ -156,6 +174,12 @@ function changePage(pageId) {
     if (targetPage) {
         targetPage.classList.add('active');
         
+        // Sayfa başlığını güncelle
+        document.title = `PLUTO - ${getPageTitle(pageId)}`;
+        
+        // Sayfayı en üste kaydır
+        window.scrollTo(0, 0);
+        
         // Eğer indirme sayfasıysa ve kullanıcı giriş yapmamışsa uyarı göster
         if (pageId === 'download') {
             const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
@@ -165,7 +189,73 @@ function changePage(pageId) {
                 }, 300);
             }
         }
+    } else {
+        console.error(`Sayfa bulunamadı: ${pageId}`);
     }
+}
+
+// Sayfa başlıklarını al
+function getPageTitle(pageId) {
+    const titles = {
+        'home': 'Ana Sayfa',
+        'features': 'Özellikler',
+        'pricing': 'Fiyatlandırma',
+        'download': 'Dosya İndirme',
+        'support': 'Destek'
+    };
+    
+    return titles[pageId] || 'PLUTO';
+}
+
+// Destek talebi gönderme
+function submitSupportRequest() {
+    const subject = document.getElementById('supportSubject').value;
+    const category = document.getElementById('supportCategory').value;
+    const message = document.getElementById('supportMessage').value;
+    
+    // Basit doğrulama
+    if (!subject || !category || !message) {
+        alert('Lütfen tüm alanları doldurun.');
+        return;
+    }
+    
+    // Burada gerçek bir uygulamada API çağrısı yapılır
+    // Şimdilik simüle ediyoruz
+    
+    alert('Destek talebiniz başarıyla gönderildi! En kısa sürede dönüş yapacağız.');
+    
+    // Formu temizle
+    document.getElementById('supportForm').reset();
+}
+
+// Dosya indirme işlemi
+function downloadFile(button) {
+    const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+    
+    if (!isLoggedIn) {
+        alert('Dosya indirmek için giriş yapmalısınız!');
+        openModal(document.getElementById('loginModal'));
+        return;
+    }
+    
+    const fileName = button.closest('.download-item').querySelector('h3').textContent;
+    
+    // Burada gerçek bir uygulamada dosya indirme işlemi yapılır
+    // Şimdilik simüle ediyoruz
+    
+    alert(`${fileName} indiriliyor...\n\nGerçek bir uygulamada dosya indirme işlemi başlayacaktır.`);
+    
+    // İndirme simülasyonu
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> İndiriliyor...';
+    button.disabled = true;
+    
+    setTimeout(() => {
+        button.innerHTML = '<i class="fas fa-download"></i> İndirildi';
+        setTimeout(() => {
+            button.innerHTML = '<i class="fas fa-download"></i> İndir';
+            button.disabled = false;
+        }, 2000);
+    }, 1500);
 }
 
 // Dil değiştirme fonksiyonu
@@ -250,7 +340,7 @@ function updateContentTurkish() {
     
     // Fiyatlandırma bölümü
     document.querySelector('.payment .section-title h2').textContent = 'Üyelik ve Ödeme';
-    document.querySelector('.payment .section-title p').textContent = 'PLUTO'ya katılın ve kazananların arasında yerinizi alın!';
+    document.querySelector('.payment .section-title p').textContent = 'PLUTO\'ya katılın ve kazananların arasında yerinizi alın!';
     
     const pricingTitles = document.querySelectorAll('.pricing-card h3');
     pricingTitles[0].textContent = '1 Aylık Üyelik';
