@@ -103,9 +103,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Sayfa geçişleri
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+    const pages = document.querySelectorAll('.page');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetPage = this.getAttribute('data-page');
+            changePage(targetPage);
+            
+            // Aktif menü öğesini güncelle
+            navLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+    
+    // Footer linkleri
+    const footerDownloadLink = document.querySelector('.footer-download-link');
+    if (footerDownloadLink) {
+        footerDownloadLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            changePage('download');
+            
+            // Aktif menü öğesini güncelle
+            navLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+                if (navLink.getAttribute('data-page') === 'download') {
+                    navLink.classList.add('active');
+                }
+            });
+        });
+    }
+    
     // Kullanıcı giriş durumunu kontrol et
     checkLoginStatus();
 });
+
+// Sayfa değiştirme fonksiyonu
+function changePage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    const targetPage = document.getElementById(`${pageId}-page`);
+    
+    // Tüm sayfaları gizle
+    pages.forEach(page => {
+        page.classList.remove('active');
+    });
+    
+    // Hedef sayfayı göster
+    if (targetPage) {
+        targetPage.classList.add('active');
+        
+        // Eğer indirme sayfasıysa ve kullanıcı giriş yapmamışsa uyarı göster
+        if (pageId === 'download') {
+            const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+            if (!isLoggedIn) {
+                setTimeout(() => {
+                    alert('Dosya indirmek için giriş yapmalısınız!');
+                }, 300);
+            }
+        }
+    }
+}
 
 // Dil değiştirme fonksiyonu
 function changeLanguage(lang) {
@@ -150,7 +211,7 @@ function updateContentTurkish() {
         navItems[1].textContent = 'Özellikler';
         navItems[2].textContent = 'Fiyatlandırma';
         navItems[3].textContent = 'Dosya İndir';
-        navItems[4].textContent = 'Destek Talebi';
+        navItems[4].textContent = 'Destek';
     }
     
     // Giriş/Kayıt butonları
@@ -189,7 +250,7 @@ function updateContentTurkish() {
     
     // Fiyatlandırma bölümü
     document.querySelector('.payment .section-title h2').textContent = 'Üyelik ve Ödeme';
-    document.querySelector('.payment .section-title p').textContent = 'PLUTO\'ya katılın ve kazananların arasında yerinizi alın!';
+    document.querySelector('.payment .section-title p').textContent = 'PLUTO'ya katılın ve kazananların arasında yerinizi alın!';
     
     const pricingTitles = document.querySelectorAll('.pricing-card h3');
     pricingTitles[0].textContent = '1 Aylık Üyelik';
@@ -228,28 +289,28 @@ function updateContentTurkish() {
         btn.innerHTML = '<i class="fas fa-download"></i> İndir';
     });
     
-    // Destek talebi bölümü
-    document.querySelector('.support-ticket .section-title h2').textContent = 'Destek Talebi';
-    document.querySelector('.support-ticket .section-title p').textContent = 'Bir sorunuz veya probleminiz mi var? Destek ekibimizle iletişime geçin.';
-    document.querySelector('.ticket-notice p').textContent = 'Destek talebi oluşturmak için giriş yapmış olmanız gerekmektedir.';
+    // Destek bölümü
+    document.querySelector('.support .section-title h2').textContent = 'Destek';
+    document.querySelector('.support .section-title p').textContent = 'Bir sorunuz veya probleminiz mi var? Destek ekibimizle iletişime geçin.';
+    document.querySelector('.support-notice p').textContent = 'Destek talebi oluşturmak için giriş yapmış olmanız gerekmektedir.';
     
-    const ticketLabels = document.querySelectorAll('.ticket-form label');
-    ticketLabels[0].textContent = 'Konu';
-    ticketLabels[1].textContent = 'Kategori';
-    ticketLabels[2].textContent = 'Mesaj';
+    const supportLabels = document.querySelectorAll('.support-form label');
+    supportLabels[0].textContent = 'Konu';
+    supportLabels[1].textContent = 'Kategori';
+    supportLabels[2].textContent = 'Mesaj';
     
-    const ticketPlaceholders = document.querySelectorAll('.ticket-form input, .ticket-form textarea, .ticket-form select');
-    ticketPlaceholders[0].placeholder = 'Sorununuzun konusu';
-    ticketPlaceholders[2].placeholder = 'Sorununuzu detaylı bir şekilde açıklayın';
+    const supportPlaceholders = document.querySelectorAll('.support-form input, .support-form textarea, .support-form select');
+    supportPlaceholders[0].placeholder = 'Sorununuzun konusu';
+    supportPlaceholders[2].placeholder = 'Sorununuzu detaylı bir şekilde açıklayın';
     
-    const ticketOptions = document.querySelectorAll('.ticket-form option');
-    ticketOptions[0].textContent = 'Kategori seçin';
-    ticketOptions[1].textContent = 'Teknik Sorun';
-    ticketOptions[2].textContent = 'Fatura ve Ödeme';
-    ticketOptions[3].textContent = 'Hesap Sorunu';
-    ticketOptions[4].textContent = 'Diğer';
+    const supportOptions = document.querySelectorAll('.support-form option');
+    supportOptions[0].textContent = 'Kategori seçin';
+    supportOptions[1].textContent = 'Teknik Sorun';
+    supportOptions[2].textContent = 'Fatura ve Ödeme';
+    supportOptions[3].textContent = 'Hesap Sorunu';
+    supportOptions[4].textContent = 'Diğer';
     
-    document.querySelector('.ticket-form .btn').textContent = 'Gönder';
+    document.querySelector('.support-form .btn').textContent = 'Gönder';
     
     // Giriş modalı
     document.querySelector('#loginModal h2').textContent = 'Giriş Yap';
@@ -300,7 +361,7 @@ function updateContentEnglish() {
         navItems[1].textContent = 'Features';
         navItems[2].textContent = 'Pricing';
         navItems[3].textContent = 'Download';
-        navItems[4].textContent = 'Support Ticket';
+        navItems[4].textContent = 'Support';
     }
     
     // Giriş/Kayıt butonları
@@ -378,28 +439,28 @@ function updateContentEnglish() {
         btn.innerHTML = '<i class="fas fa-download"></i> Download';
     });
     
-    // Destek talebi bölümü
-    document.querySelector('.support-ticket .section-title h2').textContent = 'Support Ticket';
-    document.querySelector('.support-ticket .section-title p').textContent = 'Have a question or problem? Contact our support team.';
-    document.querySelector('.ticket-notice p').textContent = 'You must be logged in to create a support ticket.';
+    // Destek bölümü
+    document.querySelector('.support .section-title h2').textContent = 'Support';
+    document.querySelector('.support .section-title p').textContent = 'Have a question or problem? Contact our support team.';
+    document.querySelector('.support-notice p').textContent = 'You must be logged in to create a support ticket.';
     
-    const ticketLabels = document.querySelectorAll('.ticket-form label');
-    ticketLabels[0].textContent = 'Subject';
-    ticketLabels[1].textContent = 'Category';
-    ticketLabels[2].textContent = 'Message';
+    const supportLabels = document.querySelectorAll('.support-form label');
+    supportLabels[0].textContent = 'Subject';
+    supportLabels[1].textContent = 'Category';
+    supportLabels[2].textContent = 'Message';
     
-    const ticketPlaceholders = document.querySelectorAll('.ticket-form input, .ticket-form textarea, .ticket-form select');
-    ticketPlaceholders[0].placeholder = 'Your issue subject';
-    ticketPlaceholders[2].placeholder = 'Describe your issue in detail';
+    const supportPlaceholders = document.querySelectorAll('.support-form input, .support-form textarea, .support-form select');
+    supportPlaceholders[0].placeholder = 'Your issue subject';
+    supportPlaceholders[2].placeholder = 'Describe your issue in detail';
     
-    const ticketOptions = document.querySelectorAll('.ticket-form option');
-    ticketOptions[0].textContent = 'Select category';
-    ticketOptions[1].textContent = 'Technical Issue';
-    ticketOptions[2].textContent = 'Billing & Payment';
-    ticketOptions[3].textContent = 'Account Issue';
-    ticketOptions[4].textContent = 'Other';
+    const supportOptions = document.querySelectorAll('.support-form option');
+    supportOptions[0].textContent = 'Select category';
+    supportOptions[1].textContent = 'Technical Issue';
+    supportOptions[2].textContent = 'Billing & Payment';
+    supportOptions[3].textContent = 'Account Issue';
+    supportOptions[4].textContent = 'Other';
     
-    document.querySelector('.ticket-form .btn').textContent = 'Submit';
+    document.querySelector('.support-form .btn').textContent = 'Submit';
     
     // Giriş modalı
     document.querySelector('#loginModal h2').textContent = 'Login';
@@ -606,10 +667,11 @@ function checkLoginStatus() {
     const userMenu = document.querySelector('.user-menu');
     const usernameSpan = document.querySelector('.username');
     const downloadButtons = document.querySelectorAll('.download-btn');
-    const ticketForm = document.getElementById('ticketForm');
-    const ticketInputs = ticketForm.querySelectorAll('input, select, textarea, button');
+    const supportForm = document.getElementById('supportForm');
+    const supportInputs = supportForm.querySelectorAll('input, select, textarea, button');
     const downloadNotice = document.querySelector('.download-notice');
-    const ticketNotice = document.querySelector('.ticket-notice');
+    const supportNotice = document.querySelector('.support-notice');
+    const downloadLinks = document.querySelectorAll('.download-link');
     
     if (isLoggedIn) {
         // Kullanıcı giriş yapmış
@@ -626,13 +688,18 @@ function checkLoginStatus() {
         });
         
         // Destek formunu etkinleştir
-        ticketInputs.forEach(input => {
+        supportInputs.forEach(input => {
             input.disabled = false;
         });
         
         // Bildirimleri gizle
         if (downloadNotice) downloadNotice.style.display = 'none';
-        if (ticketNotice) ticketNotice.style.display = 'none';
+        if (supportNotice) supportNotice.style.display = 'none';
+        
+        // İndirme linklerini göster
+        downloadLinks.forEach(link => {
+            link.style.display = 'flex';
+        });
     } else {
         // Kullanıcı giriş yapmamış
         if (userLoginBtn) userLoginBtn.style.display = 'block';
@@ -645,12 +712,27 @@ function checkLoginStatus() {
         });
         
         // Destek formunu devre dışı bırak
-        ticketInputs.forEach(input => {
+        supportInputs.forEach(input => {
             input.disabled = true;
         });
         
         // Bildirimleri göster
         if (downloadNotice) downloadNotice.style.display = 'flex';
-        if (ticketNotice) ticketNotice.style.display = 'flex';
+        if (supportNotice) supportNotice.style.display = 'flex';
+        
+        // Eğer şu an indirme sayfasındaysa ana sayfaya yönlendir
+        const currentPage = document.querySelector('.page.active');
+        if (currentPage && currentPage.id === 'download-page') {
+            changePage('home');
+            
+            // Aktif menü öğesini güncelle
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+            navLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+                if (navLink.getAttribute('data-page') === 'home') {
+                    navLink.classList.add('active');
+                }
+            });
+        }
     }
 }
