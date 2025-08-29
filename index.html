@@ -16,11 +16,11 @@
         </div>
         <nav class="sidebar-nav">
             <ul>
-                <li><a href="#home" class="active"><i class="fas fa-home"></i> <span class="nav-text">Ana Sayfa</span></a></li>
-                <li><a href="#features"><i class="fas fa-star"></i> <span class="nav-text">Özellikler</span></a></li>
-                <li><a href="#pricing"><i class="fas fa-tag"></i> <span class="nav-text">Fiyatlandırma</span></a></li>
-                <li><a href="#support"><i class="fas fa-download"></i> <span class="nav-text">Dosya İndir</span></a></li>
-                <li><a href="#support-ticket"><i class="fas fa-headset"></i> <span class="nav-text">Destek Talebi</span></a></li>
+                <li><a href="#home" class="active" data-page="home"><i class="fas fa-home"></i> <span class="nav-text">Ana Sayfa</span></a></li>
+                <li><a href="#features" data-page="features"><i class="fas fa-star"></i> <span class="nav-text">Özellikler</span></a></li>
+                <li><a href="#pricing" data-page="pricing"><i class="fas fa-tag"></i> <span class="nav-text">Fiyatlandırma</span></a></li>
+                <li><a href="#download" data-page="download" class="download-link"><i class="fas fa-download"></i> <span class="nav-text">Dosya İndir</span></a></li>
+                <li><a href="#support" data-page="support"><i class="fas fa-headset"></i> <span class="nav-text">Destek</span></a></li>
             </ul>
         </nav>
         <div class="auth-buttons">
@@ -66,208 +66,214 @@
             </div>
         </header>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="container hero-content">
-                <h1>PLUTO</h1>
-                <h2>JUST TO BE A WINNER!</h2>
-                <p>PLUTO, CS2, CS:GO, GTA 5 Online, CS 1.6, Apex Legends ve SCP:SL gibi popüler çevrimiçi oyunlar için bir oyun asistanıdır.</p>
-                <a href="#pricing" class="btn">Hemen Katıl</a>
-            </div>
-        </section>
-
-        <!-- Welcome Section -->
-        <section class="welcome">
-            <div class="container">
-                <div class="section-title">
-                    <h2>PLUTO projesi sayfasına hoş geldiniz!</h2>
-                </div>
-                <div class="welcome-content">
-                    <p>PLUTO, son 8 yılda 250.000'den fazla memnun kullanıcıyla BDT pazarının önde gelen projelerinden biridir. Ürünlerimiz, oyunculara kendilerini bir e-spor yıldızı olarak deneyimleme fırsatı sunuyor.</p>
-                    <p>Bugün PLUTO'ya katılın ve çevrimiçi oyunlarda ustalık yolculuğunuza başlayın!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" class="features">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Özelliklerimiz</h2>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Koruma</h3>
-                        <p>Teknolojilerimiz oyun deneyiminizin istikrarını ve güvenliğini sağlar.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-video"></i>
-                        <h3>Bypass Kaydı</h3>
-                        <p>Yayın yapmayı mı seviyorsunuz? Video kaydetmeyi mi? Ürünlerimizle içerik üretebilir ve görünmez olabilirsiniz.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-headset"></i>
-                        <h3>7/24 Destek</h3>
-                        <p>7/24 teknik desteğimiz her zaman size yardımcı olmaya hazırdır.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-cloud"></i>
-                        <h3>Bulut Teknolojileri</h3>
-                        <p>Tüm ayarlarınızı bulutta güvenli bir şekilde depolamak ve korumak için bulut teknolojisini kullanıyoruz.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Section -->
-        <section id="pricing" class="payment">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Üyelik ve Ödeme</h2>
-                    <p>PLUTO'ya katılın ve kazananların arasında yerinizi alın!</p>
-                </div>
-                <div class="pricing-cards">
-                    <div class="pricing-card">
-                        <h3>1 Aylık Üyelik</h3>
-                        <div class="price">₺199<span>/ay</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tüm oyunlar için destek</li>
-                            <li><i class="fas fa-check"></i> 7/24 teknik destek</li>
-                            <li><i class="fas fa-check"></i> Düzenli güncellemeler</li>
-                            <li><i class="fas fa-check"></i> Bulut yedekleme</li>
-                        </ul>
-                        <button class="btn">Satın Al</button>
-                    </div>
-                    <div class="pricing-card featured">
-                        <div class="popular">Popüler</div>
-                        <h3>3 Aylık Üyelik</h3>
-                        <div class="price">₺499<span>/3 ay</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tüm oyunlar için destek</li>
-                            <li><i class="fas fa-check"></i> 7/24 teknik destek</li>
-                            <li><i class="fas fa-check"></i> Düzenli güncellemeler</li>
-                            <li><i class="fas fa-check"></i> Bulut yedekleme</li>
-                            <li><i class="fas fa-check"></i> Özel özelliklere erişim</li>
-                        </ul>
-                        <button class="btn">Satın Al</button>
-                    </div>
-                    <div class="pricing-card">
-                        <h3>1 Yıllık Üyelik</h3>
-                        <div class="price">₺1499<span>/yıl</span></div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Tüm oyunlar için destek</li>
-                            <li><i class="fas fa-check"></i> 7/24 teknik destek</li>
-                            <li><i class="fas fa-check"></i> Düzenli güncellemeler</li>
-                            <li><i class="fas fa-check"></i> Bulut yedekleme</li>
-                            <li><i class="fas fa-check"></i> Özel özelliklere erişim</li>
-                            <li><i class="fas fa-check"></i> Öncelikli destek</li>
-                        </ul>
-                        <button class="btn">Satın Al</button>
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Home Page -->
+            <section id="home-page" class="page active">
+                <!-- Hero Section -->
+                <div class="hero">
+                    <div class="container hero-content">
+                        <h1>PLUTO</h1>
+                        <h2>JUST TO BE A WINNER!</h2>
+                        <p>PLUTO, CS2, CS:GO, GTA 5 Online, CS 1.6, Apex Legends ve SCP:SL gibi popüler çevrimiçi oyunlar için bir oyun asistanıdır.</p>
+                        <a href="#pricing" class="btn">Hemen Katıl</a>
                     </div>
                 </div>
 
-                <div class="payment-form">
-                    <h3>Ödeme Bilgileri</h3>
-                    <form id="paymentForm">
-                        <div class="form-group">
-                            <label for="cardNumber">Kart Numarası</label>
-                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                <!-- Welcome Section -->
+                <div class="welcome">
+                    <div class="container">
+                        <div class="section-title">
+                            <h2>PLUTO projesi sayfasına hoş geldiniz!</h2>
                         </div>
-                        <div class="form-row">
+                        <div class="welcome-content">
+                            <p>PLUTO, son 8 yılda 250.000'den fazla memnun kullanıcıyla BDT pazarının önde gelen projelerinden biridir. Ürünlerimiz, oyunculara kendilerini bir e-spor yıldızı olarak deneyimleme fırsatı sunuyor.</p>
+                            <p>Bugün PLUTO'ya katılın ve çevrimiçi oyunlarda ustalık yolculuğunuza başlayın!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Page -->
+            <section id="features-page" class="page">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Özelliklerimiz</h2>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Koruma</h3>
+                            <p>Teknolojilerimiz oyun deneyiminizin istikrarını ve güvenliğini sağlar.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-video"></i>
+                            <h3>Bypass Kaydı</h3>
+                            <p>Yayın yapmayı mı seviyorsunuz? Video kaydetmeyi mi? Ürünlerimizle içerik üretebilir ve görünmez olabilirsiniz.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-headset"></i>
+                            <h3>7/24 Destek</h3>
+                            <p>7/24 teknik desteğimiz her zaman size yardımcı olmaya hazırdır.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Bulut Teknolojileri</h3>
+                            <p>Tüm ayarlarınızı bulutta güvenli bir şekilde depolamak ve korumak için bulut teknolojisini kullanıyoruz.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Page -->
+            <section id="pricing-page" class="page">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Üyelik ve Ödeme</h2>
+                        <p>PLUTO'ya katılın ve kazananların arasında yerinizi alın!</p>
+                    </div>
+                    <div class="pricing-cards">
+                        <div class="pricing-card">
+                            <h3>1 Aylık Üyelik</h3>
+                            <div class="price">₺199<span>/ay</span></div>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Tüm oyunlar için destek</li>
+                                <li><i class="fas fa-check"></i> 7/24 teknik destek</li>
+                                <li><i class="fas fa-check"></i> Düzenli güncellemeler</li>
+                                <li><i class="fas fa-check"></i> Bulut yedekleme</li>
+                            </ul>
+                            <button class="btn">Satın Al</button>
+                        </div>
+                        <div class="pricing-card featured">
+                            <div class="popular">Popüler</div>
+                            <h3>3 Aylık Üyelik</h3>
+                            <div class="price">₺499<span>/3 ay</span></div>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Tüm oyunlar için destek</li>
+                                <li><i class="fas fa-check"></i> 7/24 teknik destek</li>
+                                <li><i class="fas fa-check"></i> Düzenli güncellemeler</li>
+                                <li><i class="fas fa-check"></i> Bulut yedekleme</li>
+                                <li><i class="fas fa-check"></i> Özel özelliklere erişim</li>
+                            </ul>
+                            <button class="btn">Satın Al</button>
+                        </div>
+                        <div class="pricing-card">
+                            <h3>1 Yıllık Üyelik</h3>
+                            <div class="price">₺1499<span>/yıl</span></div>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Tüm oyunlar için destek</li>
+                                <li><i class="fas fa-check"></i> 7/24 teknik destek</li>
+                                <li><i class="fas fa-check"></i> Düzenli güncellemeler</li>
+                                <li><i class="fas fa-check"></i> Bulut yedekleme</li>
+                                <li><i class="fas fa-check"></i> Özel özelliklere erişim</li>
+                                <li><i class="fas fa-check"></i> Öncelikli destek</li>
+                            </ul>
+                            <button class="btn">Satın Al</button>
+                        </div>
+                    </div>
+
+                    <div class="payment-form">
+                        <h3>Ödeme Bilgileri</h3>
+                        <form id="paymentForm">
                             <div class="form-group">
-                                <label for="expiryDate">Son Kullanma Tarihi</label>
-                                <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                                <label for="cardNumber">Kart Numarası</label>
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Son Kullanma Tarihi</label>
+                                    <input type="text" id="expiryDate" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" placeholder="123" required>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" placeholder="123" required>
+                                <label for="cardName">Kart Üzerindeki İsim</label>
+                                <input type="text" id="cardName" placeholder="Ad Soyad" required>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="cardName">Kart Üzerindeki İsim</label>
-                            <input type="text" id="cardName" placeholder="Ad Soyad" required>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" id="saveCard">
-                            <label for="saveCard">Kart bilgilerimi kaydet</label>
-                        </div>
-                        <button type="submit" class="btn">Ödemeyi Tamamla</button>
-                    </form>
+                            <div class="form-check">
+                                <input type="checkbox" id="saveCard">
+                                <label for="saveCard">Kart bilgilerimi kaydet</label>
+                            </div>
+                            <button type="submit" class="btn">Ödemeyi Tamamla</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Support Section -->
-        <section id="support" class="download">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Dosya İndirme</h2>
-                    <p>PLUTO yazılımını indirin ve kurulum talimatlarını takip edin.</p>
-                </div>
-                <div class="download-content">
-                    <div class="download-notice">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <p>Dosya indirmek için giriş yapmış olmanız gerekmektedir.</p>
+            <!-- Download Page -->
+            <section id="download-page" class="page">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Dosya İndirme</h2>
+                        <p>PLUTO yazılımını indirin ve kurulum talimatlarını takip edin.</p>
                     </div>
-                    <div class="download-items">
-                        <div class="download-item">
-                            <div class="download-info">
-                                <h3>PLUTO Client v2.4.1</h3>
-                                <p>Son güncelleme: 15 Kasım 2023</p>
-                                <p>Dosya boyutu: 48.2 MB</p>
-                            </div>
-                            <button class="btn download-btn" disabled><i class="fas fa-download"></i> İndir</button>
+                    <div class="download-content">
+                        <div class="download-notice">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Dosya indirmek için giriş yapmış olmanız gerekmektedir.</p>
                         </div>
-                        <div class="download-item">
-                            <div class="download-info">
-                                <h3>PLUTO Config Manager v1.2.0</h3>
-                                <p>Son güncelleme: 5 Kasım 2023</p>
-                                <p>Dosya boyutu: 12.7 MB</p>
+                        <div class="download-items">
+                            <div class="download-item">
+                                <div class="download-info">
+                                    <h3>PLUTO Client v2.4.1</h3>
+                                    <p>Son güncelleme: 15 Kasım 2023</p>
+                                    <p>Dosya boyutu: 48.2 MB</p>
+                                </div>
+                                <button class="btn download-btn" disabled><i class="fas fa-download"></i> İndir</button>
                             </div>
-                            <button class="btn download-btn" disabled><i class="fas fa-download"></i> İndir</button>
+                            <div class="download-item">
+                                <div class="download-info">
+                                    <h3>PLUTO Config Manager v1.2.0</h3>
+                                    <p>Son güncelleme: 5 Kasım 2023</p>
+                                    <p>Dosya boyutu: 12.7 MB</p>
+                                </div>
+                                <button class="btn download-btn" disabled><i class="fas fa-download"></i> İndir</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Support Ticket Section -->
-        <section id="support-ticket" class="support-ticket">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Destek Talebi</h2>
-                    <p>Bir sorunuz veya probleminiz mi var? Destek ekibimizle iletişime geçin.</p>
-                </div>
-                <div class="ticket-content">
-                    <div class="ticket-notice">
-                        <i class="fas fa-exclamation-circle"></i>
-                        <p>Destek talebi oluşturmak için giriş yapmış olmanız gerekmektedir.</p>
+            <!-- Support Page -->
+            <section id="support-page" class="page">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Destek</h2>
+                        <p>Bir sorunuz veya probleminiz mi var? Destek ekibimizle iletişime geçin.</p>
                     </div>
-                    <form id="ticketForm" class="ticket-form">
-                        <div class="form-group">
-                            <label for="ticketSubject">Konu</label>
-                            <input type="text" id="ticketSubject" placeholder="Sorununuzun konusu" required disabled>
+                    <div class="support-content">
+                        <div class="support-notice">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>Destek talebi oluşturmak için giriş yapmış olmanız gerekmektedir.</p>
                         </div>
-                        <div class="form-group">
-                            <label for="ticketCategory">Kategori</label>
-                            <select id="ticketCategory" required disabled>
-                                <option value="">Kategori seçin</option>
-                                <option value="technical">Teknik Sorun</option>
-                                <option value="billing">Fatura ve Ödeme</option>
-                                <option value="account">Hesap Sorunu</option>
-                                <option value="other">Diğer</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="ticketMessage">Mesaj</label>
-                            <textarea id="ticketMessage" rows="5" placeholder="Sorununuzu detaylı bir şekilde açıklayın" required disabled></textarea>
-                        </div>
-                        <button type="submit" class="btn" disabled>Gönder</button>
-                    </form>
+                        <form id="supportForm" class="support-form">
+                            <div class="form-group">
+                                <label for="supportSubject">Konu</label>
+                                <input type="text" id="supportSubject" placeholder="Sorununuzun konusu" required disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="supportCategory">Kategori</label>
+                                <select id="supportCategory" required disabled>
+                                    <option value="">Kategori seçin</option>
+                                    <option value="technical">Teknik Sorun</option>
+                                    <option value="billing">Fatura ve Ödeme</option>
+                                    <option value="account">Hesap Sorunu</option>
+                                    <option value="other">Diğer</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="supportMessage">Mesaj</label>
+                                <textarea id="supportMessage" rows="5" placeholder="Sorununuzu detaylı bir şekilde açıklayın" required disabled></textarea>
+                            </div>
+                            <button type="submit" class="btn" disabled>Gönder</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <!-- Footer -->
         <footer>
@@ -294,8 +300,8 @@
                     <div class="footer-section">
                         <h4>Destek</h4>
                         <ul>
-                            <li><a href="#support">Dosya İndir</a></li>
-                            <li><a href="#support-ticket">Destek Talebi</a></li>
+                            <li><a href="#download" class="footer-download-link">Dosya İndir</a></li>
+                            <li><a href="#support">Destek Talebi</a></li>
                             <li><a href="#">İletişim</a></li>
                             <li><a href="#">Durum Sayfası</a></li>
                         </ul>
