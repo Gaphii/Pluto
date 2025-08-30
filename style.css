@@ -9,6 +9,9 @@
     --lighter: #34495e;
     --text: #ecf0f1;
     --text-secondary: #bdc3c7;
+    --success: #2ecc71;
+    --danger: #e74c3c;
+    --warning: #f39c12;
     --gradient: linear-gradient(135deg, var(--dark-blue), var(--dark-purple));
     --sidebar-width: 250px;
     --sidebar-collapsed: 70px;
@@ -225,6 +228,7 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 
 .user-btn {
@@ -237,6 +241,11 @@ header {
     cursor: pointer;
     font-weight: 600;
     color: var(--text);
+    transition: background 0.3s;
+}
+
+.user-btn:hover {
+    background: var(--lighter);
 }
 
 .user-btn i {
@@ -246,7 +255,7 @@ header {
 .user-dropdown {
     display: none;
     position: absolute;
-    right: 20px;
+    right: 0;
     top: 50px;
     background: var(--lighter);
     min-width: 200px;
@@ -279,7 +288,6 @@ header {
 }
 
 /* Page Content */
-/* Page Content */
 .page-content {
     padding: 20px 0;
     min-height: calc(100vh - 80px);
@@ -299,243 +307,6 @@ header {
     to { opacity: 1; }
 }
 
-/* Features Section */
-.features {
-    padding: 80px 0;
-    background: var(--darker);
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.feature-card {
-    background: var(--dark);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-    border: 1px solid var(--light);
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-}
-
-.feature-card i {
-    font-size: 40px;
-    margin-bottom: 20px;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.feature-card h3 {
-    margin-bottom: 15px;
-    color: var(--text);
-}
-
-.feature-card p {
-    color: var(--text-secondary);
-}
-
-/* Pricing Section */
-.payment {
-    padding: 80px 0;
-    background: var(--dark);
-}
-
-.pricing-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
-}
-
-.pricing-card {
-    background: var(--darker);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    position: relative;
-    transition: transform 0.3s;
-    border: 1px solid var(--light);
-}
-
-.pricing-card:hover {
-    transform: translateY(-5px);
-}
-
-.pricing-card.featured {
-    border: 2px solid var(--purple);
-    transform: scale(1.05);
-}
-
-.pricing-card.featured:hover {
-    transform: scale(1.05) translateY(-5px);
-}
-
-.popular {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--purple);
-    color: var(--text);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.pricing-card h3 {
-    margin-bottom: 20px;
-    color: var(--text);
-}
-
-.price {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--purple);
-}
-
-.price span {
-    font-size: 16px;
-    color: var(--text-secondary);
-}
-
-.pricing-card ul {
-    list-style: none;
-    margin-bottom: 30px;
-}
-
-.pricing-card ul li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-}
-
-.pricing-card ul li i {
-    color: var(--blue);
-    margin-right: 10px;
-}
-
-.payment-form {
-    background: var(--darker);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    margin: 0 auto;
-    border: 1px solid var(--light);
-}
-
-.payment-form h3 {
-    margin-bottom: 20px;
-    color: var(--text);
-    text-align: center;
-}
-
-/* Download Section */
-.download {
-    padding: 80px 0;
-    background: var(--darker);
-}
-
-.download-content {
-    background: var(--dark);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--light);
-}
-
-.download-notice {
-    display: flex;
-    align-items: center;
-    background: #2d3436;
-    padding: 15px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    color: #e74c3c;
-}
-
-.download-notice i {
-    margin-right: 10px;
-    font-size: 20px;
-}
-
-.download-items {
-    display: grid;
-    gap: 20px;
-}
-
-.download-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid var(--light);
-    border-radius: 4px;
-    background: var(--darker);
-}
-
-.download-info h3 {
-    margin-bottom: 5px;
-    color: var(--text);
-}
-
-.download-info p {
-    color: var(--text-secondary);
-    margin-bottom: 3px;
-    font-size: 14px;
-}
-
-.download-btn {
-    padding: 10px 20px;
-}
-
-/* Support Section */
-.support {
-    padding: 80px 0;
-    background: var(--dark);
-}
-
-.support-content {
-    background: var(--darker);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    border: 1px solid var(--light);
-}
-
-.support-notice {
-    display: flex;
-    align-items: center;
-    background: #2d3436;
-    padding: 15px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    color: #e74c3c;
-}
-
-.support-notice i {
-    margin-right: 10px;
-    font-size: 20px;
-}
-
-.support-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
 /* Hero Section */
 .hero {
     background: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
@@ -609,6 +380,26 @@ header {
 .btn:disabled:hover {
     color: var(--text);
     background: #555;
+}
+
+.btn-secondary {
+    background: var(--light);
+    border-color: var(--light);
+}
+
+.btn-secondary:hover {
+    background: transparent;
+    color: var(--text);
+}
+
+.btn-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+}
+
+.btn-danger:hover {
+    background: transparent;
+    color: var(--danger);
 }
 
 /* Welcome Section */
@@ -951,6 +742,130 @@ header {
     margin: 0 auto;
 }
 
+/* Profile Section */
+.profile-content {
+    background: var(--dark);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--light);
+}
+
+.profile-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.profile-avatar i {
+    font-size: 40px;
+    color: var(--text);
+}
+
+.profile-info h3 {
+    margin-bottom: 5px;
+    color: var(--text);
+}
+
+.profile-info p {
+    color: var(--text-secondary);
+    margin-bottom: 3px;
+}
+
+.profile-details {
+    margin-bottom: 30px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--light);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-item label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.detail-item p {
+    color: var(--text-secondary);
+}
+
+/* Subscription Section */
+.subscription-content {
+    background: var(--dark);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--light);
+}
+
+.subscription-card {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.subscription-card h3 {
+    margin-bottom: 20px;
+    color: var(--text);
+    text-align: center;
+}
+
+.subscription-details {
+    margin-bottom: 30px;
+}
+
+.subscription-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.status-active {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.status-inactive {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+/* Downloads History Section */
+.downloads-content {
+    background: var(--dark);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--light);
+}
+
+.downloads-list {
+    display: grid;
+    gap: 15px;
+}
+
 /* Footer */
 footer {
     background: var(--dark);
@@ -1207,6 +1122,11 @@ footer {
     .language-btn span {
         display: none;
     }
+    
+    .detail-item {
+        flex-direction: column;
+        gap: 5px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1281,6 +1201,20 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 15px;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .subscription-actions {
+        flex-direction: column;
     }
     
     .footer-content {
