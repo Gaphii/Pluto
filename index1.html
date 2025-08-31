@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLUTO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo"><i class="fas fa-rocket"></i><span> PLUTO</span></div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#" data-page="home"><i class="fas fa-house"></i><span class="nav-text">Ana Sayfa</span></a></li>
+        <li><a href="#" data-page="features"><i class="fas fa-sparkles"></i><span class="nav-text">Özellikler</span></a></li>
+        <li><a href="#" data-page="pricing"><i class="fas fa-tags"></i><span class="nav-text">Fiyatlandırma</span></a></li>
+        <li><a href="#" data-page="download"><i class="fas fa-download"></i><span class="nav-text">Dosya İndir</span></a></li>
+        <li><a href="#" data-page="support"><i class="fas fa-life-ring"></i><span class="nav-text">Destek</span></a></li>
+        <li class="nav-divider"></li>
+        <li class="auth-only"><a href="#" data-page="profile"><i class="fas fa-user"></i><span class="nav-text">Profil</span></a></li>
+        <li class="auth-only"><a href="#" data-page="subscription"><i class="fas fa-crown"></i><span class="nav-text">Abonelik</span></a></li>
+        <li class="auth-only"><a href="#" data-page="downloads"><i class="fas fa-clock-rotate-left"></i><span class="nav-text">İndirme Geçmişi</span></a></li>
+      </ul>
+    </nav>
+    <div class="sidebar-actions">
+      <button class="btn primary open-login"><i class="fas fa-right-to-bracket"></i><span class="nav-text">Giriş Yap</span></button>
+      <button class="btn ghost open-register"><i class="fas fa-user-plus"></i><span class="nav-text">Kayıt Ol</span></button>
+      <div class="user-actions" style="display:none">
+        <button class="btn primary" id="logoutBtn"><i class="fas fa-arrow-right-from-bracket"></i><span class="nav-text">Çıkış</span></button>
+        <button class="btn ghost user-profile-btn"><i class="fas fa-user-gear"></i><span class="nav-text">Hesabım</span></button>
+        <div class="user-dropdown">
+          <a href="#" data-page="profile">Profil</a>
+          <a href="#" data-page="subscription">Abonelik</a>
+          <a href="#" data-page="downloads">İndirme Geçmişi</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <button class="sidebar-toggle"><i class="fas fa-bars"></i></button>
+    <div class="spacer"></div>
+    <button class="language-btn"><i class="fas fa-globe"></i> <span class="nav-text">Türkçe</span> <i class="fas fa-chevron-down"></i></button>
+  </header>
+
+  <main class="main-content">
+    <!-- Home -->
+    <section id="home-page" class="page active">
+      <div class="hero">
+        <h1>Pluto'ya Hoş Geldin</h1>
+        <h2>Modern, hızlı ve şık tek sayfa uygulaması</h2>
+        <div class="hero-image"><img src="https://via.placeholder.com/800x300.png?text=Ana+Sayfa+Görseli" alt="Hero Görseli" /></div>
+        <div class="hero-actions">
+          <a href="#" class="btn primary" data-page="download"><i class="fas fa-download"></i> Hemen İndir</a>
+          <a href="#" class="btn ghost" data-page="features"><i class="fas fa-sparkles"></i> Özelliklere Bak</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features-page" class="page">
+      <div class="container">
+        <div class="section-title"><h2>Özellikler</h2></div>
+        <div class="features-grid">
+          <div class="card"><i class="fas fa-cloud"></i><h3>Bulut Depolama</h3><p>Dosyalarınızı güvenle saklayın.</p></div>
+          <div class="card"><i class="fas fa-headset"></i><h3>7/24 Destek</h3><p>Her zaman yanınızdayız.</p></div>
+          <div class="card"><i class="fas fa-video"></i><h3>Stream Desteği</h3><p>Kesintisiz medya akışı.</p></div>
+          <div class="card"><i class="fas fa-shield-alt"></i><h3>Güvenlik</h3><p>Verileriniz şifreli ve korumalıdır.</p></div>
+        </div>
+          <div class="card"><i class="fas fa-lock"></i><h3>Güvenli</h3><p>Temel doğrulama akışları dahildir.</p></div>
+          <div class="card"><i class="fas fa-mobile"></i><h3>Duyarlı</h3><p>Tüm cihazlarda mükemmel görünüm.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing-page" class="page">
+      <div class="container">
+        <div class="section-title"><h2>Fiyatlandırma</h2></div>
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <h3>Ücretsiz</h3><p>Başlamak için ideal</p>
+            <div class="price">0₺</div>
+            <button class="btn ghost open-register">Kayıt Ol</button>
+          </div>
+          <div class="pricing-card featured">
+            <h3>Pro</h3><p>Gelişmiş özellikler</p>
+            <div class="price">49₺/ay</div>
+            <a href="#" class="btn primary" data-page="subscription">Yükselt</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section id="download-page" class="page">
+      <div class="container">
+        <div class="section-title"><h2>Dosya İndir</h2></div>
+        <div class="download-item">
+          <div class="download-meta">
+            <h3>Pluto Kurulum</h3>
+            <div class="details">
+              <span class="detail-item"><i class="fas fa-microchip"></i> x64</span>
+              <span class="detail-item"><i class="fas fa-file-zipper"></i> 25 MB</span>
+              <span class="detail-item"><i class="fas fa-code"></i> v1.0.0</span>
+            </div>
+          </div>
+          <button class="btn primary download-btn"><i class="fas fa-download"></i> İndir</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support -->
+    <section id="support-page" class="page">
+      <div class="container">
+        <div class="section-title"><h2>Destek Talebi</h2></div>
+        <form id="supportForm" class="card p-20">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="supportSubject">Konu</label>
+              <input type="text" id="supportSubject" placeholder="Sorununuzun kısa özeti">
+            </div>
+            <div class="form-group">
+              <label for="supportCategory">Kategori</label>
+              <select id="supportCategory">
+                <option value="">Seçin…</option>
+                <option>Ödeme</option>
+                <option>Hesap</option>
+                <option>Teknik</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="supportMessage">Mesaj</label>
+            <textarea id="supportMessage" rows="5" placeholder="Detayları yazın"></textarea>
+          </div>
+          <button class="btn primary" type="submit"><i class="fas fa-paper-plane"></i> Gönder</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Profile -->
+    <section id="profile-page" class="page">
+      <div class="container">
+        <div class="section-title"><h2>Profil</h2></div>
+        <div class="profile-header">
+          <div class="profile-avatar"><img src="https://i.pravatar.cc/80" alt="avatar"></div>
+          <div><h3 id="profileName">Kullanıcı</h3><p id="profileEmail">—</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscription -->
+    <section id="subscription-page" class="page">
+      <div class="container subscription-content">
+        <div class="subscription-card">
+          <h3>Abonelik Durumu</h3>
+          <div class="subscription-details">
+            <p>Plan: <strong id="planName">Ücretsiz</strong></p>
+            <p>Durum: <strong class="status-inactive" id="planStatus">Pasif</strong></p>
+          </div>
+          <div class="subscription-actions">
+            <button class="btn primary">Pro'ya Yükselt</button>
+            <button class="btn ghost">Kupon Kullan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downloads History -->
+    <section id="downloads-page" class="page">
+      <div class="container downloads-content">
+        <div class="section-title"><h2>İndirme Geçmişi</h2></div>
+        <div class="downloads-list" id="downloadsList"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>PLUTO</h3>
+          <p>Hızlı, güvenli, modern.</p>
+          <div class="socials">
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Şirket</h4>
+          <ul>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Kariyer</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Hukuki</h4>
+          <ul>
+            <li><a href="#">Gizlilik</a></li>
+            <li><a href="#">Çerezler</a></li>
+            <li><a href="#">Kullanım Şartları</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Destek</h4>
+          <ul>
+            <li><a href="#" data-page="download">Dosya İndir</a></li>
+            <li><a href="#" data-page="support">Destek Talebi</a></li>
+            <li><a href="#">İletişim</a></li>
+            <li><a href="#">Durum Sayfası</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>İletişim</h4>
+          <p><i class="fas fa-envelope"></i> support@pluto.com</p>
+          <p><i class="fas fa-comment"></i> Telegram: @plutosupport</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 PLUTO. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <div class="modal-header">
+        <h2 id="loginTitle">Giriş Yap</h2>
+        <button class="close" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">E‑posta</label>
+            <input type="email" id="loginEmail" placeholder="E‑posta adresiniz" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Şifre</label>
+            <input type="password" id="loginPassword" placeholder="Şifreniz" required>
+          </div>
+          <div class="form-options">
+            <label class="form-check"><input type="checkbox" id="rememberMe"> Beni hatırla</label>
+            <a href="#" class="forgot-password">Şifremi unuttum</a>
+          </div>
+          <button type="submit" class="btn primary w-100">Giriş Yap</button>
+          <div class="auth-divider"><span>veya</span></div>
+          <div class="social-auth">
+            <button type="button" class="social-btn google-btn"><i class="fab fa-google"></i> Google ile</button>
+            <button type="button" class="social-btn discord-btn"><i class="fab fa-discord"></i> Discord ile</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+      <div class="modal-header">
+        <h2 id="registerTitle">Kayıt Ol</h2>
+        <button class="close" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="registerName">Ad Soyad</label>
+            <input type="text" id="registerName" placeholder="Adınız Soyadınız" required>
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">E‑posta</label>
+            <input type="email" id="registerEmail" placeholder="E‑posta adresiniz" required>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Şifre</label>
+            <input type="password" id="registerPassword" placeholder="En az 6 karakter" minlength="6" required>
+          </div>
+          <button type="submit" class="btn primary w-100">Hesap Oluştur</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
